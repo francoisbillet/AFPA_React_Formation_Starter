@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Product - Formation React</title>
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Accueil</a>
+      </nav>
+    </header>
+
+    <main class="product">
+      <div class="left-column">
+        <img
+          src="https://picsum.photos/seed/lkhjkllm/1000/800"
+          alt="produit 1"
+        />
+      </div>
+
+      <div class="right-column">
+        <div class="product-description">
+          <span>product</span>
+          <h1>Produit 1</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            rhoncus nibh sed diam ultricies, at mattis ipsum ullamcorper. Mauris
+            mattis, massa fermentum vulputate suscipit, felis odio lobortis
+            orci, id viverra sem ex eget libero. Proin pharetra fermentum
+            fringilla. Quisque laoreet nunc nec ex congue, quis pellentesque
+            velit efficitur. Mauris luctus, est lacinia tristique imperdiet,
+            velit libero lacinia neque, dignissim vehicula sapien nulla quis mi.
+            Sed ut dictum turpis. In ut fermentum sapien, eu semper turpis.
+            Curabitur iaculis arcu vitae pharetra ornare
+          </p>
+        </div>
+
+        <div class="product-configuration">
+          <div class="product-color">
+            <span>Couleur</span>
+            <div class="color-choose">
+              <div>
+                <input
+                  data-image="red"
+                  type="radio"
+                  id="red"
+                  name="color"
+                  value="red"
+                  checked
+                />
+                <label for="red"><span></span></label>
+              </div>
+              <div>
+                <input
+                  data-image="blue"
+                  type="radio"
+                  id="blue"
+                  name="color"
+                  value="blue"
+                />
+                <label for="blue"><span></span></label>
+              </div>
+              <div>
+                <input
+                  data-image="black"
+                  type="radio"
+                  id="black"
+                  name="color"
+                  value="black"
+                />
+                <label for="black"><span></span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-price">
+          <span>148€</span>
+          <a href="#" class="cart-btn">Ajouter au panier</a>
+        </div>
+      </div>
+    </main>
+
+    <script src="./product.js" charset="utf-8"></script>
+  </body>
+</html>
