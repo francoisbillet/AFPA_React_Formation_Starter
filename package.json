@@ -9,7 +9,9 @@
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production "
   },
-  "dependencies": {},
+  "dependencies": {
+    "random-float": "^2.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",

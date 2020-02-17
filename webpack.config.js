@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   entry: {
     home: "./src/index.js",
+    // test: "./src/test.js",
     product: "./src/product.js"
   },
   module: {
@@ -15,7 +16,7 @@ module.exports = {
         }
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.css$/i,
         use: ["style-loader", "css-loader"]
       },
       {

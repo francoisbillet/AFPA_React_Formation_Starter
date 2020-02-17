@@ -11,6 +11,17 @@
     </main>
   </body>
   <script>
-    //no-op
+    const object = {
+      name: "François",
+      age: 25
+    };
+    const { name, age } = object;
+
+    console.log(`Je m'appelle ${name} et j'ai ${age} ans`);
+
+    const array = ["Francis", 28];
+    const [name2, age2] = array;
+
+    console.log(`Je m'appelle ${name2} et j'ai ${age2} ans`);
   </script>
 </html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Formation React</title>
+  </head>
+
+  <body>
+    <header></header>
+
+    <main class="content">
+      Hello there
+    </main>
+  </body>
+
+  <a id="loading"></a>
+  <script>
+    /*
+
+          gaetan@occitech.fr
+              //no-op
+
+              //arrow functions
+              const test = () => {
+                return "test";
+
+              }
+              const test = () => "test";
+
+              //template string
+
+              const name = "test";
+              const hello = `bonjour ${name}`;
+              const multiple = `Bonjour
+              la suite est ici`;
+              const markup = `
+              <ul>
+                <li>test</li>
+              </ul>
+             `;
+
+              //fonctions utiles pour les tableaux : map,filter,find,includes,reduce
+
+              //destructuring
+
+              const object ={
+                name: "test",
+                age:23
+
+              };
+              const array=["test",23];
+
+              const {name}= object;
+              const [name2,age2]=array;
+
+              //spread operator
+
+
+              ------------Promise-------------
+
+              js fetch open api
+              
+
+              */
+
+    //Exercice
+    const tab = [1, 3, 10, 2];
+    function MaxMinOfArray() {
+      if (tab.lenght < 2) {
+        console.log("pas assez d'élément dans le tableau");
+      } else {
+        const max = Math.max(...tab);
+        const min = Math.min(...tab);
+
+        return {
+          minimum: min,
+          maximum: max
+        };
+      }
+    }
+
+    const MaxMinOfArrayTab = () => [Math.min(...tab), Math.max(...tab)];
+
+    const MaxMinOfArrayObjectReturn = () => {
+      {
+        return { minimum2: Math.min(...tab), maximum2: Math.max(...tab) };
+      }
+    };
+    const MaxMinOfArrayObject = () => ({
+      minimum2: Math.min(...tab),
+      maximum2: Math.max(...tab)
+    });
+
+    console.log(MaxMinOfArray(tab));
+    console.log(MaxMinOfArrayTab(tab));
+    console.log(MaxMinOfArrayObjectReturn(tab));
+    console.log(MaxMinOfArrayObject(tab));
+
+    const ArrayOddElement = tab.filter(item => item % 2 === 0);
+    console.log(ArrayOddElement);
+
+    //
+    const CATEGORY_SPA = "spa";
+    const cart = [
+      { category: "spa", price: 5000 },
+      { category: "spa", price: 650 },
+      { category: "gift", price: 10 },
+      { category: "gift", price: 1200 },
+      { category: "spa", price: 77 }
+    ];
+
+    function SumPriceOfSpa(cart) {
+      let total = 0;
+      let total2 = 0;
+      for (let i = 0; i < cart.length; i++) {
+        if (cart[i].category === CATEGORY_SPA) {
+          total = cart[i].price + total;
+        }
+      }
+
+      cart.forEach(element => {
+        if (element.category === CATEGORY_SPA) {
+          total2 += element.price;
+        }
+      });
+
+      const SumPriceOfSpaReduceFilter = cart
+        .filter(item => item.category === CATEGORY_SPA)
+        .reduce((acc, currentvalue) => acc + currentvalue.price, 0);
+
+      return {
+        for: total,
+        foreach: total2,
+        filter_et_reduce: SumPriceOfSpaReduceFilter
+      };
+    }
+    console.log(SumPriceOfSpa(cart));
+
+    const user = {
+      name: "Dupont",
+      firstName: "Paul",
+      age: 23,
+      productsInCartPrices: [100, 15.99, 20, 10]
+    };
+    const UserInfo = `${user.name} ${user.firstName} est agé de ${user.age} ans.
+    Son panier vaut ${user.productsInCartPrices.reduce((a, b) => a + b, 0)}€`;
+    console.log(UserInfo);
+    
+    const PromiseInfoCart = new Promise(function(resolve, reject) {
+      setTimeout(() => {
+        resolve(cart.forEach(element => console.log(element)));
+      }, 2000);
+    });
+    
+    PromiseInfoCart.then(() => PromiseInfoCart);
+    console.log(cart);
+
+    const PromiseHTML = new Promise(function(resolve, reject) {
+      document.getElementById("loading").innerHTML = "Loading...";
+      setTimeout(() => {
+        if (Math.random() > 0.5) {
+          resolve(cart);
+        } else {
+          reject("Erreur");
+        }
+      }, 2000);
+    });
+    PromiseHTML.then(
+      value =>
+        (document.getElementById("loading").innerHTML = JSON.stringify(value))
+    ).catch(
+      value =>
+        (document.getElementById("loading").innerHTML = JSON.stringify(value))
+    );
+  </script>
+</html>
